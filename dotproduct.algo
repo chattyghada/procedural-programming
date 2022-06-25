@@ -1,0 +1,66 @@
+
+
+
+PROCEDURE read_vector1(n:INTEGER,VAR V1: vector_of INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        read (V1[i])
+    END_FOR
+END
+PROCEDURE read_vector2(n:INTEGER,VAR V2: vector_of INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        read (V2[i])
+    END_FOR
+END
+
+PROCEDURE write_vector1(n:INTEGER,V1: vector_of INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        write (V1[i])
+    END_FOR
+END
+PROCEDURE write_vector2(n:INTEGER, V2: vector_of INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        write (V2[i])
+    END_FOR
+END
+
+
+
+
+PROCEDURE dot_product(VAR ps:INTEGER , VAR V1:vector_of INTEGER , VAR V2:vector_of INTEGER, n:INTEGER)
+VAR
+    i:INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        
+        IF (n MOD 2 =0) THEN
+             ps:= V1[i]*V2[i]
+        ELSE
+            write (n)
+        END_IF
+    END_FOR
+END
+
+
+ALGORITHM  dot_product
+VAR
+   i,n: INTEGER;
+   V1, V2: vector_of INTEGER [500]
+BEGIN
+    read_vector1 (V1, n)
+    read_vector2(V2, n)
+    write_vector1(V1, n)
+    write_vector2(V2, n)
+    dot_product(ps, v1, v2)
+END
